@@ -26,7 +26,7 @@ fn get_message(player: mpris::Player) -> String {
                 )
             },
             mpris::PlaybackStatus::Paused => return "⏸".to_string(),
-            mpris::PlaybackStatus::Stopped => return "".to_string(),
+            mpris::PlaybackStatus::Stopped => return "⏹".to_string(),
         },
         Err(_) => return String::from("Could not get playback status")
     }
@@ -82,7 +82,7 @@ fn marquee(
             .collect();
         format!("{}{}", unwrapped_segment, wrapped_segment)
     };
-    format!("{}⁢", display)
+    format!(" {}⁢", display)
 }
 
 fn main() {
@@ -101,13 +101,13 @@ fn main() {
                 };
                 get_message(p)
             },
-            Err(_) => String::from("Could not find player")
+            Err(_) => String::from("̸")
         },
         Err(_) => String::from("Could not connect to DBus")
     };
 
     println!(
-        "♫ {}",
+        "♫{}",
         marquee(
             message,
             marquee_width,
