@@ -1,4 +1,5 @@
-# `mediastat` - an MPRIS client tool to display a "now playing" marquee
+# `mediastat`
+## an MPRIS client tool to display a "now playing" marquee
 
 `mediastat` is a straightforward, no-nonsense "now playing" marquee generator
 for status bars that can display the text output of a Linux command line
